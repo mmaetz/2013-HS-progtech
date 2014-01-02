@@ -1,0 +1,124 @@
+\chapter{Introduction}
+\section{A first C++ program}
+\begin{lstlisting}
+/* A first program */
+#include <iostream>
+using namespace std;
+int main()
+{
+cout << "Hello students\n";
+// std::cout without the using declaration 
+return 0;
+}
+\end{lstlisting}
+\begin{itemize}
+	\item /* and */ are the delimiters for
+	comments
+	\item includes declarations of I/O
+	streams
+	\item declares that we want to use the
+	standard library (“std”)
+	\item the main program is always
+	called “main”
+	\item “cout” is the standard output
+	stream.
+	\item “<<“ is the operator to write to a
+	stream
+	\item statements end with a ;
+	\item // starts one-line comments
+	\item A return value of 0 means that
+	everything went OK
+	1
+\end{itemize}
+\section{Namespace}
+\begin{itemize}
+	\item  All these versions are equivalent
+	\item  Feel free to use any style in your
+	program
+	\item  Never use using statements
+globally in libraries
+\end{itemize}
+\cht{namespace}
+\begin{lstlisting}
+	#include <iostream>
+	using namespace std;
+	int main()
+	{
+	cout << "Hello\n";
+	}
+\end{lstlisting}
+\begin{lstlisting}
+	#include <iostream>
+	using std::cout;
+	int main()
+	{
+	cout << "Hello\n";
+	}
+\end{lstlisting}
+\begin{lstlisting}
+	#include <iostream>
+	int main()
+	{
+	cout << "Hello\n";
+	}
+\end{lstlisting}
+\begin{lstlisting}
+	 #include <iostream>
+	 #include <cmath>
+	 using namespace std;
+	 int main()
+	 {
+	 cout << "The square root of 5 is"
+	 << sqrt(5.) << "\n";
+	 return 0;
+	 }
+\end{lstlisting}
+\begin{itemize}
+	\item \textless \index[cpp]{cmath}\textgreater is the header for
+ mathematical functions
+ \item Output can be connected by \textless\textless
+ \item Expressions can be used in
+ output statements
+\end{itemize}
+\section{Integral data types}
+\begin{itemize}
+	\item  Signed data types
+		\begin{itemize}
+			\item short, int, long, long long
+			\item since C++11: int8_t, int16_t, int32_t, int64_t
+		\end{itemize}
+	\item  Unsigned data types
+		\begin{itemize}
+			\item unsigned short, unsigned int,
+			unsigned long, unsigned long long
+			\item since C++11: uint8_t, uint16_t, uint32_t, uint64_t
+		\end{itemize}
+	\item  Are stored as binary numbers of length
+		\begin{itemize}
+			\item short: usually 16 bit
+			\item int: usually 32 bit
+			\item long: usually 32 bit on 32-bit CPUs and 64 bit on 64-bit CPUs
+			\item long long: usually 64 bits
+		\end{itemize}
+\end{itemize}
+\section{Integer representations}
+\begin{itemize}
+	\item  An n-bit integer is stored in n/8 bytes
+		\begin{itemize}
+			\item Little-endian: least significant byte first
+			\item Big-endian: most significant byte first
+			\item Exercise: write a program to check the format of your CPU
+		\end{itemize}
+	\item  Unsigned
+		\begin{itemize}
+			\item x just stored as n bits, values from 0 \ldots 2 n -1
+		\end{itemize}
+	\item  Signed
+		\begin{itemize}
+			\item Stored as 2’s complement, values from -2 n-1 \ldots 2 n-1 -1
+			\item Highest bit is sign S
+			\item $x \geq 0$ : S=0, rest is $x$
+			\item $x < 0$ : S=1, rest is $\sim (-x -1)$
+			\item Advantage of this format: signed numbers can be added like unsigned
+		\end{itemize}
+\end{itemize}
