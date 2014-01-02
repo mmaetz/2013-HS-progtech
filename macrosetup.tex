@@ -1,14 +1,19 @@
 %% Custom commands =============================================================
+\newcommand{\ifcontent}[1]{\ifthenelse{\equal{#1}{}}{}{\addcontentsline{toc}{section}{#1}}}
 
 \newcommand{\cht}[1]{\index[cpp]{#1}}
-\newcommand{\thht}[1]{\index[cpp]{#1}}
-\newcommand{\psd}[5]{\begin{center}%
+\newcommand{\tht}[1]{\index[theory]{#1}}
+\newcommand{\ght}[1]{\index[git]{#1}}
+\newcommand{\psd}[7]{\begin{center}%
+	\ifcontent{#5}
 	\includegraphics[page=#2,width=#4\textwidth]{../mod-slides/#1.pdf}\\%
+	\ifcontent{#6}
 	\includegraphics[page=#3,width=#4\textwidth]{../mod-slides/#1.pdf}%
-\end{center}#5}
-\newcommand{\pss}[4]{\begin{center}%
+\end{center}#7}
+\newcommand{\pss}[5]{\begin{center}%
+	\ifcontent{#4}
 	\includegraphics[page=#2,width=#3\textwidth]{../mod-slides/#1.pdf}\\%
-\end{center}#4}
+\end{center}#5}
 
 %% Depends on this
 \usepackage{ifthen}
