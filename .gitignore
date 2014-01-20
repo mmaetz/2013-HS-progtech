@@ -1,0 +1,11 @@
+*.swn
+*.toc
+*.fls
+*.fdb_latexmk
+*.swo
+*.swp
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.thm
