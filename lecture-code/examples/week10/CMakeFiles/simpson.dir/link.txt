@@ -1,0 +1,2 @@
+/usr/bin/ar cr libsimpson.a  CMakeFiles/simpson.dir/simpson.cpp.o
+/usr/bin/ranlib libsimpson.a

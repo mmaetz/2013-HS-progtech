@@ -1,0 +1,350 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      8362,        341]
+NotebookOptionsPosition[      6633,        276]
+NotebookOutlinePosition[      7012,        292]
+CellTagsIndexPosition[      6969,        289]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Random numbers", "Title"],
+
+Cell[CellGroupData[{
+
+Cell["A self-made generator", "Section"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"r0", "=", "1234"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"a", "=", "106"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"c", "=", "1283"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"m", "=", "6075"}], ";"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"zufall", "[", "r_", "]"}], " ", "=", " ", 
+   RowBox[{"Mod", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"a", " ", "r"}], "+", "c"}], ",", "m"}], "]"}]}], 
+  ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"uniform", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"NestList", "[", 
+     RowBox[{"zufall", ",", "r0", ",", 
+      RowBox[{"m", "+", "1"}]}], "]"}], "/", 
+    RowBox[{"N", "[", "m", "]"}]}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pairs", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Take", "[", 
+      RowBox[{"uniform", ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", 
+         RowBox[{"n", "+", "1"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "m"}], "}"}]}], "]"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tripel", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Take", "[", 
+      RowBox[{"uniform", ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", 
+         RowBox[{"n", "+", "2"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "m"}], "}"}]}], "]"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"unitvectors", " ", "=", " ", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"#", "/", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"#", ".", "#"}], "]"}]}], ")"}], "&"}], ",", "tripel"}], 
+    "]"}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["2D Points", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"pairs", ",", 
+   RowBox[{"AspectRatio", "->", "1"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3D Points", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{"Map", "[", 
+     RowBox[{"Point", ",", "tripel"}], "]"}], "]"}], ",", 
+   RowBox[{"ViewPoint", " ", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "32.5"}], ",", "200.0", ",", 
+      RowBox[{"-", "52.5"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.437909822724841*^9, 3.437909828898238*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics3D", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3D Spherical Surface", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{"Map", "[", 
+     RowBox[{"Point", ",", "unitvectors"}], "]"}], "]"}], ",", 
+   RowBox[{"ViewPoint", "->", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "3", ",", "2"}], "}"}]}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics3D", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Builtin generator", "Section"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"uniform2", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"RandomReal", "[", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"m", "+", "1"}]}], "}"}]}], "]"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pairs2", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Take", "[", 
+      RowBox[{"uniform2", ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", 
+         RowBox[{"n", "+", "1"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "m"}], "}"}]}], "]"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tripel2", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Take", "[", 
+      RowBox[{"uniform2", ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", 
+         RowBox[{"n", "+", "2"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", 
+       RowBox[{"m", "-", "2"}]}], "}"}]}], "]"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"unitvectors2", " ", "=", " ", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"#", "/", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"#", ".", "#"}], "]"}]}], ")"}], "&"}], ",", "tripel2"}], 
+    "]"}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"pairs2", ",", 
+   RowBox[{"AspectRatio", "->", "1"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{"Map", "[", 
+     RowBox[{"Point", ",", "tripel2"}], "]"}], "]"}], ",", 
+   RowBox[{"ViewPoint", " ", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "32.5"}], ",", "200.0", ",", 
+      RowBox[{"-", "52.5"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{3.437909840526722*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics3D", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{"Map", "[", 
+     RowBox[{"Point", ",", "unitvectors2"}], "]"}], "]"}], ",", 
+   RowBox[{"ViewPoint", "->", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "3", ",", "2"}], "}"}]}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\[SkeletonIndicator]", "Graphics3D", "\[SkeletonIndicator]"}],
+  False,
+  Editable->False]], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+ScreenStyleEnvironment->"Presentation",
+WindowSize->{956, 720},
+WindowMargins->{{Automatic, 21}, {Automatic, 2}},
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 31, 0, 132, "Title"],
+Cell[CellGroupData[{
+Cell[623, 26, 40, 0, 113, "Section"],
+Cell[666, 28, 234, 8, 138, "Input"],
+Cell[903, 38, 224, 8, 47, "Input"],
+Cell[1130, 48, 243, 7, 47, "Input"],
+Cell[1376, 57, 346, 11, 47, "Input"],
+Cell[1725, 70, 347, 11, 47, "Input"],
+Cell[2075, 83, 296, 10, 47, "Input"],
+Cell[CellGroupData[{
+Cell[2396, 97, 31, 0, 58, "Subsection"],
+Cell[CellGroupData[{
+Cell[2452, 101, 123, 3, 47, "Input"],
+Cell[2578, 106, 134, 4, 47, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2761, 116, 31, 0, 58, "Subsection"],
+Cell[CellGroupData[{
+Cell[2817, 120, 404, 11, 78, "Input"],
+Cell[3224, 133, 136, 4, 47, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3409, 143, 42, 0, 58, "Subsection"],
+Cell[CellGroupData[{
+Cell[3476, 147, 284, 8, 78, "Input"],
+Cell[3763, 157, 136, 4, 47, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3960, 168, 36, 0, 113, "Section"],
+Cell[3999, 170, 258, 8, 47, "Input"],
+Cell[4260, 180, 348, 11, 47, "Input"],
+Cell[4611, 193, 377, 12, 47, "Input"],
+Cell[4991, 207, 298, 10, 47, "Input"],
+Cell[CellGroupData[{
+Cell[5314, 221, 124, 3, 47, "Input"],
+Cell[5441, 226, 134, 4, 47, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5612, 235, 381, 11, 78, "Input"],
+Cell[5996, 248, 136, 4, 47, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6169, 257, 285, 8, 78, "Input"],
+Cell[6457, 267, 136, 4, 47, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

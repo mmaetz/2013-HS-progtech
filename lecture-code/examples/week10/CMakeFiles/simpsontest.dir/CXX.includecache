@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/troyer/git/lecture/examples/week10/main.cpp
+iostream
+-
+cmath
+-
+simpson.hpp
+/Users/troyer/git/lecture/examples/week10/simpson.hpp
+
+/Users/troyer/git/lecture/examples/week10/simpson.hpp
+stdexcept
+-
+

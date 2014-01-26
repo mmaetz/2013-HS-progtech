@@ -1,0 +1,2 @@
+/Users/troyer/git/lecture/examples/week10/CMakeFiles/simpson.dir
+/Users/troyer/git/lecture/examples/week10/CMakeFiles/simpsontest.dir

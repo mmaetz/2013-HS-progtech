@@ -1,0 +1,30 @@
+# test function: 0.0
+# interval for integration: <0,1>  discretized using 4194304 bins
+# precise result=0
+# function_nr: hard-coded version, function pointer version, template version, abstract class version
+1  1e-07 +/- 6.90534e-10  0.0165027 +/- 3.60416e-05  1e-07 +/- 6.90534e-10  0.0244162 +/- 5.33221e-05
+# test function: 1.0
+# interval for integration: <0,1>  discretized using 4194304 bins
+# precise result=1
+# function_nr: hard-coded version, function pointer version, template version, abstract class version
+2  0.004039 +/- 8.82256e-06  0.0187275 +/- 4.08978e-05  0.0040432 +/- 8.83227e-06  0.0279684 +/- 6.10763e-05
+# test function: x
+# interval for integration: <0,1>  discretized using 4194304 bins
+# precise result=0.5
+# function_nr: hard-coded version, function pointer version, template version, abstract class version
+3  0.00684195 +/- 1.4945e-05  0.0168279 +/- 3.67495e-05  0.0069035 +/- 1.50812e-05  0.0235043 +/- 5.13265e-05
+# test function: x*x
+# interval for integration: <0,1>  discretized using 4194304 bins
+# precise result=0.333333
+# function_nr: hard-coded version, function pointer version, template version, abstract class version
+4  0.00811595 +/- 1.77265e-05  0.0186368 +/- 4.06981e-05  0.00807385 +/- 1.76329e-05  0.0245892 +/- 5.36976e-05
+# test function: sin(x)
+# interval for integration: <0,1>  discretized using 4194304 bins
+# precise result=0.459698
+# function_nr: hard-coded version, function pointer version, template version, abstract class version
+5  0.0822372 +/- 0.000179579  0.0835861 +/- 0.000182526  0.0822414 +/- 0.000179588  0.0883513 +/- 0.000192931
+# test function: sin(5x)
+# interval for integration: <0,1>  discretized using 4194304 bins
+# precise result=0.143268
+# function_nr: hard-coded version, function pointer version, template version, abstract class version
+6  0.130904 +/- 0.000285909  0.13183 +/- 0.000287875  0.133739 +/- 0.000292042  0.14414 +/- 0.000314755
