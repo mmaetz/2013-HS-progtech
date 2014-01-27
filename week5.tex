@@ -3,35 +3,42 @@
 \psd{week5a-crop}{2}{3}{0.96}{Improving on last week's assignment}{Generic algorithms versus concrete implementations}{\tht{generic algorthms}}
 \psd{week5a-crop}{4}{5}{0.96}{Function overloading in C++}{How can several functions have the same name?}{}
 \newpage
-\lstinputlisting{../lecture-code/examples/week5/min.cpp}
+\lstinputlisting{lecture-code/examples/week5/min.cpp}
 \newpage
 \psd{week5a-crop}{6}{7}{0.96}{C++ wersus C linkage}{Using macros (is dangerous)}{\cht{linkage}\cht{macros}}
-\psd{week5a-crop}{8}{9}{0.96}{<++>}{<++>}{<++>}
-\psd{week5a-crop}{10}{11}{0.96}{<++>}{<++>}{<++>}
-\psd{week5a-crop}{12}{13}{0.96}{<++>}{<++>}{<++>}
-\psd{week5a-crop}{14}{15}{0.96}{<++>}{<++>}{<++>}
-\psd{week5a-crop}{16}{17}{0.96}{<++>}{<++>}{<++>}
-\psd{week5a-crop}{18}{19}{0.96}{<++>}{<++>}{<++>}
-\psd{week5a-crop}{20}{21}{0.96}{<++>}{<++>}{<++>}
-\psd{week5a-crop}{22}{23}{0.96}{<++>}{<++>}{<++>}
-\psd{week5a-crop}{24}{25}{0.96}{<++>}{<++>}{<++>}
-\pss{week5a-crop}{26}{0.96}{<++>}{<++>}
+\newpage
+g++ -E stops after the preprocessing stage. 
+\lstinputlisting{lecture-code/examples/week5/minmacro.cpp}
+\lstinputlisting{lecture-code/examples/week5/minmacro.preprocessed}
+\lstinputlisting{lecture-code/examples/week5/mintemplate.cpp}
+\cht{preprocess}
+\newpage
+\psd{week5a-crop}{8}{9}{0.96}{Generic algorthms using templates in C++}{Usage Causes Instantation}{\cht{template}\cht{generic implementation}}
+\psd{week5a-crop}{10}{11}{0.96}{Polymorphism}{Generic programming process}{\tht{polymorphism}\tht{generic programming}}
+\psd{week5a-crop}{12}{13}{0.96}{Generic Programming Process: Example}{}{}
+\psd{week5a-crop}{14}{15}{0.96}{}{}{}
+\psd{week5a-crop}{16}{17}{0.96}{}{The problem of different types: manual solution}{}
+\psd{week5a-crop}{18}{19}{0.96}{Concepts}{Assignable concept}{\tht{concept}}
+\psd{week5a-crop}{20}{21}{0.96}{CopyConstructible concept}{Documenting a template function}{}
+\psd{week5a-crop}{22}{23}{0.96}{Argument Dependent Lookup (Koenig Lookup)}{Examples: iterative algorithms for linear systems}{The power method}
+\psd{week5a-crop}{24}{25}{0.96}{Is the simplest eigenvalue solver}{Generic implementation of the power method}{}
+\pss{week5a-crop}{26}{0.96}{Concepts for the power method}{}
 \chapter{Introduction to classes}
-\pss{week5b-crop}{1}{0.96}{<++>}{<++>}
-\psd{week5b-crop}{2}{3}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{4}{5}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{6}{7}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{8}{9}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{10}{11}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{12}{13}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{14}{15}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{16}{17}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{18}{19}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{20}{21}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{22}{23}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{24}{25}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{26}{27}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{28}{29}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{30}{31}{0.96}{<++>}{<++>}{<++>}
-\psd{week5b-crop}{32}{33}{0.96}{<++>}{<++>}{<++>}
-\pss{week5b-crop}{34}{0.96}{<++>}{<++>}
+\pss{week5b-crop}{1}{0.96}{}{}
+\psd{week5b-crop}{2}{3}{0.96}{Classes}{A first simulation: biological aging}{\cht{classes}}
+\psd{week5b-crop}{4}{5}{0.96}{The Penna model}{Details of the Penna model}{\tht{Penna model}}
+\psd{week5b-crop}{6}{7}{0.96}{Programm for the Penna model}{What are classes}{\cht{public}\cht{private}}
+\psd{week5b-crop}{8}{9}{0.96}{How to design classes}{A first class examplea traffic light}{\cht{class design}}
+\psd{week5b-crop}{10}{11}{0.96}{}{}{\cht{public}\cht{enum}}
+\psd{week5b-crop}{12}{13}{0.96}{}{}{\cht{private}\cht{member function}}
+\psd{week5b-crop}{14}{15}{0.96}{}{}{\cht{class constructor}}
+\psd{week5b-crop}{16}{17}{0.96}{}{}{\cht{class destructor}}
+\psd{week5b-crop}{18}{19}{0.96}{Data hiding and access}{Member access}{\cht{Class: data hiding and access}\cht{friend}\cht{struct vs. class}}
+\psd{week5b-crop}{20}{21}{0.96}{Special members}{Illustration: a point in two dimensions}{}
+\psd{week5b-crop}{22}{23}{0.96}{Constructions and Destructors}{Default members}{\cht{class contructor}\cht{class destructor}\cht{default members}\cht{class copy constructor}\cht{class assignment operator}\cht{destructor}}
+\psd{week5b-crop}{24}{25}{0.96}{Declaration, Definition and Implementation}{Initializing  a referenceor a const member}{\cht{class declaration}\cht{class definition}\cht{class implementation}\cht{class constructiors}\cht{Class initialize member}}
+\psd{week5b-crop}{26}{27}{0.96}{Const and volatile}{mutable}{\cht{const}\cht{volatile}\cht{mutable}}
+\psd{week5b-crop}{28}{29}{0.96}{friends}{this}{\cht{class friends}\cht{class this}}
+\psd{week5b-crop}{30}{31}{0.96}{Inlinining of member functions}{Static members}{\cht{class inlining member functions}\cht{class static members}}
+\psd{week5b-crop}{32}{33}{0.96}{Class templates}{The complex template}{}
+\pss{week5b-crop}{34}{0.96}{Do not avaid typedef}{\cht{typedef}}
