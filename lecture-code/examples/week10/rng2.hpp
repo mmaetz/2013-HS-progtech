@@ -1,3 +1,6 @@
+// This is flexible at runtime but still fast. Mixes virtual functions and templates.
+// We don't have to rewrite the derived class for another generator, but still its fast.
+
 #include <cstdlib>
 #include <vector>
 
@@ -13,6 +16,8 @@ public:
 
   virtual void seed(long seedval) =0;  
   
+  // If the iterator points to the end of the buffer we have to fill it.
+  // Else just return the precomuted value and increment the iterator.
   result_type operator() (){
     if (iter_==buffer_.end()) {
       fill_buffer(buffer_);
