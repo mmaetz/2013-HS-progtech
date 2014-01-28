@@ -1,2 +1,6 @@
+General:
+-How to give a functor as function pointer?
+
 Ex1:
 -Why is the theoretical and the practical machine epsilon not the same?
+

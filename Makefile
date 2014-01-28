@@ -6,6 +6,9 @@ slides:
 exercises:
 	latexmk -pdf --pdflatex="pdflatex --shell-escape" exercises.tex
 
+examples:
+	latexmk -pdf --pdflatex="pdflatex --shell-escape" lecture-examples.tex
+
 s-pvc:
 	latexmk -pdf -pvc --pdflatex="pdflatex --shell-escape" main.tex
 
