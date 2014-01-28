@@ -1,4 +1,5 @@
 // It's slow: Every time we want a random number we have to look up the dynamic type to call the function!
+// Using a virtual function call for one function is a waste of time. Better: Buffering -> rng2.hpp.
 
 #include <cstdlib>
 
