@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+// Inserting in the beginning is linear.
 std::size_t insert_begin() 
 {
   std::vector<int> v;
@@ -9,6 +10,7 @@ std::size_t insert_begin()
   return v.size();
 }
 
+// Inserting at the end is constant.
 std::size_t insert_end() 
 {
   std::vector<int> v;
