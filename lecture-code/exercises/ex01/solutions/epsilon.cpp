@@ -2,6 +2,8 @@
  * Exercise 1.5
  */
 
+// Output: macheps for double = 1.0842e-19 (2.22045e-16 theoretical)
+
 #include <iostream>
 #include <limits>
 
