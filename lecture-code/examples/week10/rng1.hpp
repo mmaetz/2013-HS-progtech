@@ -1,3 +1,5 @@
+// It's slow: Every time we want a random number we have to look up the dynamic type to call the function!
+
 #include <cstdlib>
 
 class RNG {
