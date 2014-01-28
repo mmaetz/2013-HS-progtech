@@ -6,7 +6,9 @@ struct int128 {
 int128 operator+(int128 x, int128 y) {
   int128 result;
   result.low=x.low+y.low;
-  result.high=x.high+y.high; // does not use carry of previous addition
+  // Problem: Does not use carry of previous addition!
+  // Solution: Patch assembly command to use carry bit!
+  result.high=x.high+y.high;
   return result;
 }
 
