@@ -98,17 +98,36 @@
 %%%%% bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Remap caps lock:
-%\begin{lstlisting}
-%remove Lock = Caps_Lock
-%keysym Escape = Caps_Lock
-%keysym Caps_Lock = Escape
-%add Lock = Caps_Lock
-%\end{lstlisting}
-%save to .Xmodmap and then
-%\begin{lstlisting}
-%xmodmap .Xmodmap
-%\end{lstlisting}
+Remap caps lock: (Don't forget space!)
+\begin{lstlisting}
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
+\end{lstlisting}
+save to .Xmodmap and then
+\begin{lstlisting}
+xmodmap .Xmodmap
+\end{lstlisting}
+Vi mode for zsh
+\begin{lstlisting}
+vim .zshrc
+\end{lstlisting}
+and write\\
+\texttt{bindkey -v}\\
+into it.
+For the vim to work normally, put in \texttt{.vimrc} :
+\begin{lstlisting}
+set ts=2
+set sw=2
+set number
+
+set nocompatible
+
+syntax enable
+filetype plugin on
+filetype indent on
+\end{lstlisting}
 \input{week1.tex}
 \input{week2.tex}
 \input{week3.tex}
