@@ -98,6 +98,17 @@
 %%%%% bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Remap caps lock:
+\begin{lstlisting}
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
+\end{lstlisting}
+save to .Xmodmap and then
+\begin{lstlisting}
+xmodmap .Xmodmap
+\end{lstlisting}
 \input{week1.tex}
 \input{week2.tex}
 \input{week3.tex}
